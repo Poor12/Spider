@@ -1,0 +1,35 @@
+import pymongo
+from bson.objectid import ObjectId
+client=pymongo.MongoClient(host='localhost',port=27017)
+db=client.test
+collection=db.students
+student={
+    'id':'20170101',
+    'name':'jordan',
+    'age':20,
+    'gender':'male'
+}
+student1={
+    'id':'20170101',
+    'name':'jordan',
+    'age':20,
+    'gender':'male'
+}
+result=collection.insert_one(student)
+result1=collection.insert_many([student,student1])
+print(result)
+print(result.inserted_id)
+result=collection.find_one({'name':'Mike'})
+results=collection.find({'age':20})
+result2=collection.find({'age':{'$gt':20}})
+result3=collection.find({'name':{'$regex':'^M.*'}})
+result4=collection.find().count()
+result5=collection.find().sort('name',pymongo.ASCENDING)
+result6=collection.find().sort('name',pymongo.ASCENDING).skip(2).limit(2)
+condition={'name':'kevin'}
+student=collection.find_one(condition)
+student['age']=26
+result7=collection.update_one(condition,{'$set':student})
+result8=collection.update_many(condition,{'$inc':{'age':1}})
+result9=collection.remove(condition)
+result10=collection.delete_many(condition)
