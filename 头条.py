@@ -7,7 +7,7 @@ def get_page(offset):
     params={
         'offset':offset,
         'format':'json',
-        'keyword':'½ÖÅÄ',
+        'keyword':'è¡—æ‹',
         'autoload':'true',
         'count':'20',
         'cur_lab':'1'
