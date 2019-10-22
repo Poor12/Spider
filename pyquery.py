@@ -2,7 +2,7 @@
 # html='''
 # <p><a href="http://example.com/lacie" class="sister" id="link2">lacie<p name="cc">999</p></a><c></c></p>
 # '''
-#³õÊ¼»¯ 
+#初始化
 # doc=pq(html)
 # print(doc('a'))
 # doc1=pq(url='https://cuiqingcai.com')
@@ -29,6 +29,6 @@
 #     a.find('p').remove()
 # print(type(lis))
 # print(lis)
-#Î±ÀàÑ¡ÔñÆ÷
+#伪类选择器
 # li=doc1('li:first-child')
 # li1=doc1('li:gt(2)')
